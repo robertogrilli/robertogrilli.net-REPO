@@ -1,0 +1,142 @@
+/* ==========================================================
+   ANIMATIONS CSS
+   Additional animation states & Splitting.js overrides
+   ========================================================== */
+
+/* Splitting.js char animation base */
+[data-splitting] .char {
+  display: inline-block;
+}
+
+/* Hero eyebrow chars */
+.hero-content .eyebrow .char {
+  opacity: 0;
+  transform: translateY(8px);
+}
+
+/* Hero subtitle words */
+.hero-subtitle .word {
+  display: inline-block;
+  opacity: 0;
+  transform: translateY(12px);
+}
+
+/* Section eyebrow chars */
+.section-connessione .eyebrow .char,
+.section-dolore .eyebrow .char,
+.section-processo .eyebrow .char,
+.section-chi-sono .eyebrow .char {
+  opacity: 0;
+  transform: translateY(6px);
+}
+
+.section-portfolio .eyebrow .char {
+  opacity: 0;
+  transform: translateY(6px);
+}
+
+/* Section title lines — initial state for GSAP */
+.title-line[data-title-line] {
+  transform: translateY(105%);
+}
+
+/* Scroll reveal elements */
+[data-scroll-reveal] {
+  opacity: 0;
+  transform: translateY(24px);
+  /* Safety net: se GSAP non trigghera, mostra il contenuto dopo 3s */
+  transition: opacity 0.5s ease 3s, transform 0.5s ease 3s;
+}
+
+/* Rimuove il fallback CSS una volta che GSAP ha preso controllo */
+.gsap-active [data-scroll-reveal] {
+  transition: none;
+}
+
+/* Photo cards initial state */
+[data-photo-card] {
+  opacity: 0;
+}
+
+/* Pain cards initial state handled via clip-path in main.css */
+
+/* Steps initial state */
+.step .step-content {
+  opacity: 0;
+  transform: translateX(-16px);
+}
+
+/* Portfolio cards initial states handled in JS */
+
+/* Chi sono photo initial state — via clip-path in main.css */
+
+/* CTA title lines */
+.section-cta .title-line[data-title-line] {
+  transform: translateY(105%);
+  color: var(--bianco);
+}
+
+/* ==========================================================
+   PULSE ANIMATION (CTA button)
+   ========================================================== */
+@keyframes pulseShadow {
+  0%, 100% {
+    box-shadow: 0 0 0 0 rgba(196,98,45,0.3);
+  }
+  50% {
+    box-shadow: 0 0 0 16px rgba(196,98,45,0);
+  }
+}
+
+/* Applied via GSAP, but fallback: */
+.pulse-btn {
+  animation: pulseShadow 3s ease-in-out infinite;
+}
+
+/* ==========================================================
+   SCROLL ARROW BOUNCE
+   (GSAP handles it, but CSS fallback)
+   ========================================================== */
+@keyframes arrowBounce {
+  0%, 100% { transform: translateX(-50%) translateY(0); }
+  50%       { transform: translateX(-50%) translateY(8px); }
+}
+
+/* ==========================================================
+   MAGNETIC BUTTON
+   (transform handled by JS, overflow visual)
+   ========================================================== */
+.magnetic-btn {
+  will-change: transform;
+}
+
+/* ==========================================================
+   DASHED BORDER SVG ANIMATION for placeholder cards
+   ========================================================== */
+@keyframes dashMove {
+  to {
+    stroke-dashoffset: -20;
+  }
+}
+
+.proj-card--placeholder svg.dashed-border rect {
+  stroke-dasharray: 8 4;
+  animation: dashMove 2s linear infinite;
+}
+
+/* ==========================================================
+   NAVBAR INITIAL STATE
+   (GSAP sets this, but we hide it on load)
+   ========================================================== */
+#navbar {
+  transform: translateY(-80px);
+  opacity: 0;
+}
+
+/* ==========================================================
+   INTRO CHAR ANIMATION STATES
+   (controlled by GSAP, defined here for reference)
+   ========================================================== */
+.intro-char {
+  display: inline-block;
+}
