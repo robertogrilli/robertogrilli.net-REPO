@@ -1,0 +1,412 @@
+<!DOCTYPE html>
+<html lang="it">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Roberto Grilli — Web Designer per Ristoranti Italiani</title>
+  <meta name="description" content="Web designer specializzato in ristoranti italiani. Creo il sito che il tuo ristorante si merita — con le tue foto, il tuo menù, la tua storia. Mockup gratis in 48 ore." />
+
+  <!-- Preload critical fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,600;1,300;1,400;1,600&family=DM+Sans:wght@300;400;500;700&display=swap" rel="stylesheet" />
+
+  <!-- CSS -->
+  <link rel="stylesheet" href="/css/main.css" />
+  <link rel="stylesheet" href="/css/animations.css" />
+</head>
+<body>
+
+  <!-- =====================================================
+       INTRO OVERLAY (Section 0)
+  ====================================================== -->
+  <div id="intro-overlay" aria-hidden="true">
+    <canvas id="intro-canvas"></canvas>
+    <div id="intro-content">
+      <div id="intro-word-wrap">
+        <span id="intro-word" class="intro-display-text"></span>
+      </div>
+      <div id="intro-tagline" aria-hidden="true">
+        <div class="intro-line intro-line-1">Il tuo ristorante.</div>
+        <div class="intro-line intro-line-2">La tua storia.</div>
+        <div class="intro-line intro-line-3">Finalmente come la vedi tu.</div>
+      </div>
+    </div>
+    <div id="intro-skip">tocca per saltare</div>
+  </div>
+
+  <!-- =====================================================
+       NAVBAR
+  ====================================================== -->
+  <nav id="navbar" aria-label="Navigazione principale">
+    <div class="nav-inner container">
+      <a href="#hero" class="nav-logo" aria-label="Roberto Grilli — Home">Roberto Grilli</a>
+      <ul class="nav-links" role="list">
+        <li><a href="#portfolio" class="nav-link">Progetti</a></li>
+        <li><a href="#come-funziona" class="nav-link">Come Funziona</a></li>
+        <li><a href="#chi-sono" class="nav-link">Chi Sono</a></li>
+      </ul>
+      <a href="[DA INSERIRE — wa.me/+39XXXXXXXXXX]" class="nav-cta" target="_blank" rel="noopener">WhatsApp →</a>
+      <button class="nav-hamburger" id="nav-hamburger" aria-label="Apri menu" aria-expanded="false" aria-controls="mobile-menu">
+        <span></span><span></span><span></span>
+      </button>
+    </div>
+  </nav>
+
+  <!-- Mobile Menu Overlay -->
+  <div id="mobile-menu" aria-modal="true" role="dialog" aria-label="Menu mobile">
+    <button id="mobile-menu-close" aria-label="Chiudi menu">✕</button>
+    <ul class="mobile-links" role="list">
+      <li><a href="#portfolio" class="mobile-link">Progetti</a></li>
+      <li><a href="#come-funziona" class="mobile-link">Come Funziona</a></li>
+      <li><a href="#chi-sono" class="mobile-link">Chi Sono</a></li>
+      <li><a href="[DA INSERIRE — wa.me/+39XXXXXXXXXX]" class="mobile-link mobile-link-cta" target="_blank" rel="noopener">WhatsApp →</a></li>
+    </ul>
+  </div>
+
+  <!-- =====================================================
+       SECTION 1 — HERO
+  ====================================================== -->
+  <section id="hero" class="section-hero" aria-label="Hero">
+    <div class="hero-bg-gradient" aria-hidden="true"></div>
+    <div class="hero-decorative-el" aria-hidden="true">
+      <svg viewBox="0 0 100 100" fill="none" xmlns="http://www.w3.org/2000/svg">
+        <circle cx="50" cy="50" r="45" stroke="rgba(191,164,106,0.15)" stroke-width="0.5"/>
+        <circle cx="50" cy="50" r="30" stroke="rgba(191,164,106,0.1)" stroke-width="0.5"/>
+        <line x1="50" y1="5" x2="50" y2="95" stroke="rgba(191,164,106,0.08)" stroke-width="0.5"/>
+        <line x1="5" y1="50" x2="95" y2="50" stroke="rgba(191,164,106,0.08)" stroke-width="0.5"/>
+      </svg>
+    </div>
+
+    <div class="container hero-content">
+      <p class="eyebrow" data-splitting>WEB DESIGNER PER RISTORANTI ITALIANI — ROMA</p>
+      <h1 class="hero-title" aria-label="Il tuo ristorante ha una storia che merita di essere raccontata.">
+        <span class="hero-line-wrap"><span class="hero-line" data-hero-line="0">Il tuo ristorante</span></span>
+        <span class="hero-line-wrap"><span class="hero-line" data-hero-line="1">ha una storia</span></span>
+        <span class="hero-line-wrap"><span class="hero-line" data-hero-line="2">che merita</span></span>
+        <span class="hero-line-wrap hero-line-wrap--serif"><span class="hero-line hero-line--serif" data-hero-line="3">di essere raccontata.</span></span>
+      </h1>
+      <p class="hero-subtitle" data-splitting>Non vendo template. Costruisco il sito che il tuo ristorante si merita — con le tue foto, il tuo menù, la tua storia. Vedi il mockup prima di decidere qualsiasi cosa.</p>
+      <div class="hero-ctas">
+        <a href="[DA INSERIRE — wa.me/+39XXXXXXXXXX]" class="btn-primary magnetic-btn" target="_blank" rel="noopener" id="hero-cta-primary">Scrivimi su WhatsApp →</a>
+        <a href="#portfolio" class="btn-secondary" id="hero-cta-secondary">Guarda i progetti ↓</a>
+      </div>
+    </div>
+
+    <div class="hero-scroll-indicator" aria-hidden="true">
+      <svg id="scroll-arrow" viewBox="0 0 24 36" fill="none" xmlns="http://www.w3.org/2000/svg">
+        <path d="M12 2L12 28M5 22L12 30L19 22" stroke="rgba(245,242,236,0.4)" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+      </svg>
+    </div>
+
+    <!-- Wave separator -->
+    <div class="section-sep sep-hero-to-conn" aria-hidden="true">
+      <svg viewBox="0 0 1440 80" preserveAspectRatio="none" xmlns="http://www.w3.org/2000/svg">
+        <path d="M0,40 C240,80 480,0 720,40 C960,80 1200,0 1440,40 L1440,80 L0,80 Z" fill="var(--bianco)"/>
+      </svg>
+    </div>
+  </section>
+
+  <!-- =====================================================
+       SECTION 2 — LA CONNESSIONE
+  ====================================================== -->
+  <section id="connessione" class="section-connessione" aria-label="La connessione">
+    <div class="container connessione-inner">
+
+      <!-- Text column -->
+      <div class="connessione-text">
+        <p class="eyebrow" data-splitting>PERCHÉ LO FACCIO</p>
+        <h2 class="section-title">
+          <span class="title-line-wrap"><span class="title-line" data-title-line>Non vendo siti web.</span></span>
+          <span class="title-line-wrap"><span class="title-line" data-title-line>Costruisco la versione</span></span>
+          <span class="title-line-wrap"><span class="title-line title-line--accent" data-title-line>ufficiale del tuo <em>locale.</em></span></span>
+        </h2>
+
+        <div class="connessione-body">
+          <p class="body-para" data-scroll-reveal>
+            Ho lavorato su siti per ristoranti italiani che avevano centinaia di recensioni a cinque stelle — e zero controllo su come apparivano online. Il problema non è la visibilità. Quella ce l'hanno già.
+          </p>
+
+          <p class="body-para" data-scroll-reveal>
+            Lavoro con proprietari che vogliono riprendere quel controllo. Che vogliono aprire il link del loro sito e riconoscere il loro ristorante — le loro foto, i loro prezzi, la loro storia — non un template con il nome cambiato.
+          </p>
+        </div>
+
+        <div class="stat-block" data-scroll-reveal>
+          <div class="stat-number">
+            <span id="stat-counter-78" class="stat-figure" data-target="78">0</span><span class="stat-symbol">%</span>
+          </div>
+          <p class="stat-text">delle prenotazioni parte da una ricerca online.<br><strong>Chi controlla quella prima impressione?</strong></p>
+        </div>
+      </div>
+
+      <!-- Photo column -->
+      <div class="connessione-photos" aria-hidden="true">
+        <!-- PHOTO 1: [DA INSERIRE — foto di un proprietario al bancone del suo locale, luce naturale, orizzontale, atmosfera calda] -->
+        <div class="photo-card photo-card--1" data-photo-card="1">
+          <div class="photo-placeholder">
+            <span class="placeholder-label">FOTO 1</span>
+            <span class="placeholder-desc">Proprietario al bancone · luce naturale · atmosfera calda</span>
+          </div>
+          <div class="photo-noise" aria-hidden="true"></div>
+        </div>
+        <!-- PHOTO 2: [DA INSERIRE — foto di mani che impiattano o preparano cibo, dettaglio] -->
+        <div class="photo-card photo-card--2" data-photo-card="2">
+          <div class="photo-placeholder">
+            <span class="placeholder-label">FOTO 2</span>
+            <span class="placeholder-desc">Mani che impiattano · dettaglio</span>
+          </div>
+          <div class="photo-noise" aria-hidden="true"></div>
+        </div>
+        <!-- PHOTO 3: [DA INSERIRE — foto di una tavolata piena, persone che mangiano, dall'alto o angolo laterale] -->
+        <div class="photo-card photo-card--3" data-photo-card="3">
+          <div class="photo-placeholder">
+            <span class="placeholder-label">FOTO 3</span>
+            <span class="placeholder-desc">Tavolata piena · dall'alto o laterale</span>
+          </div>
+          <div class="photo-noise" aria-hidden="true"></div>
+        </div>
+      </div>
+
+    </div>
+
+    <!-- Diagonal separator -->
+    <div class="sep-diagonal-down" aria-hidden="true"></div>
+  </section>
+
+  <!-- =====================================================
+       SECTION 3 — IL DOLORE
+  ====================================================== -->
+  <section id="dolore" class="section-dolore" aria-label="Il problema che risolvo">
+    <div class="container">
+      <p class="eyebrow" data-splitting>IL PROBLEMA CHE RISOLVO</p>
+      <h2 class="section-title">
+        <span class="title-line-wrap"><span class="title-line" data-title-line>Hai già tutto.</span></span>
+        <span class="title-line-wrap"><span class="title-line" data-title-line>Ti manca solo</span></span>
+        <span class="title-line-wrap"><span class="title-line" data-title-line>un posto che lo rappresenti.</span></span>
+      </h2>
+
+      <div class="cards-grid">
+
+        <article class="pain-card" data-pain-card>
+          <div class="pain-card-inner">
+            <div class="pain-block">
+              <span class="pain-label">IL PROBLEMA</span>
+              <p>"Su Google Maps ci sono foto che non ho fatto io, orari sbagliati, informazioni che non ho mai inserito io."</p>
+            </div>
+            <div class="solution-block">
+              <span class="solution-label">LA SOLUZIONE</span>
+              <p>Un sito che è la tua fonte ufficiale. Quello che vedi lì, hai deciso tu.</p>
+            </div>
+          </div>
+        </article>
+
+        <article class="pain-card" data-pain-card>
+          <div class="pain-card-inner">
+            <div class="pain-block">
+              <span class="pain-label">IL PROBLEMA</span>
+              <p>"Ho già sentito mille pitch di agenzie. Spendo soldi e non vedo risultati concreti."</p>
+            </div>
+            <div class="solution-block">
+              <span class="solution-label">LA SOLUZIONE</span>
+              <p>Non sono un'agenzia. Sono una persona sola che fa una cosa sola. Vedi il mockup gratis prima di spendere un euro.</p>
+            </div>
+          </div>
+        </article>
+
+        <article class="pain-card" data-pain-card>
+          <div class="pain-card-inner">
+            <div class="pain-block">
+              <span class="pain-label">IL PROBLEMA</span>
+              <p>"Non ho tempo per gestire un sito. Lavoro settanta ore a settimana."</p>
+            </div>
+            <div class="solution-block">
+              <span class="solution-label">LA SOLUZIONE</span>
+              <p>Lo gestisce il sito da solo. Cambi prezzi e foto in due minuti dal telefono. Io sparisco dopo la consegna — il sito resta.</p>
+            </div>
+          </div>
+        </article>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- =====================================================
+       SECTION 4 — COME FUNZIONA
+  ====================================================== -->
+  <section id="come-funziona" class="section-processo" aria-label="Come funziona">
+    <div class="container">
+      <p class="eyebrow" data-splitting>IL PROCESSO</p>
+      <h2 class="section-title">
+        <span class="title-line-wrap"><span class="title-line" data-title-line>Tre passi.</span></span>
+        <span class="title-line-wrap"><span class="title-line" data-title-line>Zero rischi.</span></span>
+        <span class="title-line-wrap"><span class="title-line" data-title-line>Vedi prima, decidi dopo.</span></span>
+      </h2>
+
+      <div class="steps-wrapper">
+        <!-- SVG connecting line -->
+        <svg class="steps-line" id="steps-line-svg" aria-hidden="true" viewBox="0 0 2 600" preserveAspectRatio="none">
+          <line id="steps-line-path" x1="1" y1="0" x2="1" y2="600" stroke="var(--terracotta)" stroke-width="1.5" stroke-dasharray="600" stroke-dashoffset="600"/>
+        </svg>
+
+        <div class="step" data-step="1">
+          <div class="step-number-bg" aria-hidden="true">01</div>
+          <div class="step-content">
+            <h3 class="step-title">Ricevo i tuoi dati</h3>
+            <p class="step-body">Mi mandi il nome del ristorante, il numero, gli orari. Faccio io tutta la ricerca — le recensioni, la posizione, le informazioni pubbliche. Non devi prepararmi niente.</p>
+          </div>
+        </div>
+
+        <div class="step" data-step="2">
+          <div class="step-number-bg" aria-hidden="true">02</div>
+          <div class="step-content">
+            <h3 class="step-title">Costruisco il tuo mockup</h3>
+            <p class="step-body">In 48 ore hai un sito completo del tuo ristorante. Con foto reali, menù interattivo, mappa, versione in italiano e inglese. Gratis, senza nessun impegno.</p>
+          </div>
+        </div>
+
+        <div class="step" data-step="3">
+          <div class="step-number-bg" aria-hidden="true">03</div>
+          <div class="step-content">
+            <h3 class="step-title">Se ti piace, andiamo live</h3>
+            <p class="step-body">Se il mockup ti convince, lo pubblichiamo. Se non ti convince, non mi devi nulla. Nessun contratto, nessuna sorpresa.</p>
+          </div>
+        </div>
+
+        <div class="pricing-note" data-scroll-reveal>
+          <p><strong>Prezzo fisso: €600.</strong> Include: menù interattivo con foto dei piatti · Google Maps · link social · orari aggiornabili · versione IT/EN · hosting per il primo anno.</p>
+        </div>
+      </div>
+    </div>
+
+    <!-- Double wave separator to portfolio -->
+    <div class="sep-double-wave" aria-hidden="true">
+      <svg viewBox="0 0 1440 100" preserveAspectRatio="none" xmlns="http://www.w3.org/2000/svg">
+        <path d="M0,30 C360,70 720,-10 1080,30 C1260,50 1380,20 1440,30 L1440,100 L0,100 Z" fill="var(--nero)"/>
+        <path d="M0,50 C280,90 560,10 840,50 C1120,90 1300,10 1440,50 L1440,100 L0,100 Z" fill="var(--nero)" opacity="0.5"/>
+      </svg>
+    </div>
+  </section>
+
+  <!-- =====================================================
+       SECTION 5 — PORTFOLIO
+  ====================================================== -->
+  <section id="portfolio" class="section-portfolio" aria-label="Progetti">
+    <div class="container">
+      <p class="eyebrow eyebrow--oro" data-splitting>I PROGETTI</p>
+      <h2 class="section-title section-title--light">
+        <span class="title-line-wrap"><span class="title-line" data-title-line>Ogni ristorante ha</span></span>
+        <span class="title-line-wrap"><span class="title-line title-line--accent" data-title-line><em>una storia diversa.</em></span></span>
+      </h2>
+
+      <div class="portfolio-grid" id="portfolio-grid">
+        <!-- Populated by JS from projects data -->
+      </div>
+    </div>
+
+    <!-- Diagonal separator reversed -->
+    <div class="sep-diagonal-up" aria-hidden="true"></div>
+  </section>
+
+  <!-- =====================================================
+       SECTION 6 — CHI SONO
+  ====================================================== -->
+  <section id="chi-sono" class="section-chi-sono" aria-label="Chi sono">
+    <div class="container chi-sono-inner">
+
+      <!-- Text column -->
+      <div class="chi-sono-text">
+        <p class="eyebrow" data-splitting>CHI SONO</p>
+        <h2 class="section-title">
+          <span class="title-line-wrap"><span class="title-line" data-title-line>Sono Roberto.</span></span>
+          <span class="title-line-wrap"><span class="title-line" data-title-line>Lavoro solo</span></span>
+          <span class="title-line-wrap"><span class="title-line" data-title-line>con ristoranti italiani.</span></span>
+        </h2>
+
+        <div class="chi-sono-body">
+          <p class="body-para" data-scroll-reveal>
+            Non sono un'agenzia. Non ho un team di dieci persone. Sono un designer e developer che ha scelto di fare una cosa sola e farla bene.
+          </p>
+          <p class="body-para placeholder-text" data-scroll-reveal>
+            <!-- [DA INSERIRE — 2-3 frasi su background personale: dove hai studiato / cosa facevi prima / cosa ti ha portato a lavorare con i ristoranti. Deve essere autentico, non generico.] -->
+            <em>[DA INSERIRE — background personale: dove hai studiato, cosa facevi prima, cosa ti ha portato a lavorare con i ristoranti]</em>
+          </p>
+          <p class="body-para" data-scroll-reveal>
+            Lavoro con un ristorante alla volta. Consegno in 48 ore. Rispondo personalmente — non un assistente, non un bot. Io.
+          </p>
+        </div>
+
+        <div class="stats-row" aria-label="Statistiche chiave">
+          <div class="stat-item" data-scroll-reveal>
+            <span class="stat-item-number" data-counter-text="48h" data-counter-num="48" data-counter-suffix="h">48h</span>
+            <span class="stat-item-label">tempo di consegna del mockup</span>
+          </div>
+          <div class="stat-divider" aria-hidden="true"></div>
+          <div class="stat-item" data-scroll-reveal>
+            <span class="stat-item-number" data-counter-text="€600" data-counter-num="600" data-counter-prefix="€">€600</span>
+            <span class="stat-item-label">prezzo fisso, tutto incluso</span>
+          </div>
+          <div class="stat-divider" aria-hidden="true"></div>
+          <div class="stat-item" data-scroll-reveal>
+            <!-- [DA INSERIRE — metrica che vuoi comunicare: es. numero progetti / anni di esperienza / altro] -->
+            <span class="stat-item-number placeholder-text"><em>[DA INSERIRE]</em></span>
+            <span class="stat-item-label placeholder-text"><em>[metrica: numero progetti / anni / altro]</em></span>
+          </div>
+        </div>
+      </div>
+
+      <!-- Photo column -->
+      <div class="chi-sono-photo" aria-hidden="true">
+        <!-- PHOTO: [DA INSERIRE — foto personale di Roberto, in un contesto autentico: dentro un locale, per strada a Roma, non in uno studio. Verticale, natural light. No suits.] -->
+        <div class="chi-sono-photo-inner" id="chi-sono-photo-el">
+          <div class="photo-placeholder photo-placeholder--portrait">
+            <span class="placeholder-label">FOTO ROBERTO</span>
+            <span class="placeholder-desc">Contesto autentico · locale o Roma · luce naturale · verticale · no suits</span>
+          </div>
+          <div class="photo-noise" aria-hidden="true"></div>
+        </div>
+      </div>
+
+    </div>
+  </section>
+
+  <!-- =====================================================
+       SECTION 7 — CTA FINALE
+  ====================================================== -->
+  <section id="cta-finale" class="section-cta" aria-label="Contatti">
+    <div class="cta-bg-number" aria-hidden="true">48</div>
+    <div class="container cta-inner">
+      <h2 class="cta-title">
+        <span class="title-line-wrap"><span class="title-line" data-title-line>Il tuo mockup</span></span>
+        <span class="title-line-wrap"><span class="title-line" data-title-line>è a 48 ore</span></span>
+        <span class="title-line-wrap"><span class="title-line" data-title-line>da adesso.</span></span>
+      </h2>
+      <p class="cta-subtitle" data-scroll-reveal>
+        Mandami il nome del ristorante. In due giorni vedi come potrebbe essere il tuo sito. Gratis, senza impegno.
+      </p>
+      <div class="cta-actions">
+        <a href="[DA INSERIRE — wa.me/+39XXXXXXXXXX]" class="btn-primary btn-primary--large magnetic-btn pulse-btn" target="_blank" rel="noopener" id="cta-wa-btn">
+          Scrivimi su WhatsApp →
+        </a>
+        <p class="cta-email">
+          O scrivimi a <a href="mailto:[DA INSERIRE — email]" class="cta-email-link">[DA INSERIRE — email]</a>
+        </p>
+      </div>
+    </div>
+  </section>
+
+  <!-- =====================================================
+       FOOTER
+  ====================================================== -->
+  <footer class="site-footer" aria-label="Footer">
+    <div class="container footer-inner">
+      <span class="footer-name">Roberto Grilli</span>
+      <span class="footer-tagline">Web Designer per Ristoranti Italiani · Roma</span>
+      <span class="footer-copy">© 2025</span>
+    </div>
+  </footer>
+
+  <!-- JS Modules -->
+  <script type="module" src="/js/main.js"></script>
+</body>
+</html>
