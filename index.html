@@ -7,9 +7,9 @@
   <meta name="description" content="Web designer specializzato in ristoranti italiani. Creo il sito che il tuo ristorante si merita — con le tue foto, il tuo menù, la tua storia. Sito completo in 48 ore." />
 
   <!-- CSS -->
-  <script type="module" crossorigin src="/assets/main-_oMHMICA.js"></script>
+  <script type="module" crossorigin src="/assets/main-DkoGyd-a.js"></script>
   <link rel="stylesheet" crossorigin href="/assets/main-BreRP_Y-.css">
-  <link rel="stylesheet" crossorigin href="/assets/main-DdaETwQk.css">
+  <link rel="stylesheet" crossorigin href="/assets/main-DrlkPIUM.css">
 </head>
 <body>
 
@@ -136,19 +136,29 @@
         </div>
       </div>
 
-      <!-- Photo column -->
-      <div class="connessione-photos" aria-hidden="true">
-        <div class="photo-card photo-card--1" data-photo-card="1">
-          <img src="/assets/ChatGPT%20Image%20Mar%2022_%202026_%2001_39_19%20AM-DtB8hNoP.webp" alt="Proprietario al bancone del suo locale" class="photo-card-img" />
-          <div class="photo-noise" aria-hidden="true"></div>
-        </div>
-        <div class="photo-card photo-card--2" data-photo-card="2">
-          <img src="/assets/ChatGPT%20Image%20Mar%2022_%202026_%2001_46_30%20AM-CMYVJJD-.webp" alt="Mani che impiattano spaghetti" class="photo-card-img" />
-          <div class="photo-noise" aria-hidden="true"></div>
-        </div>
-        <div class="photo-card photo-card--3" data-photo-card="3">
-          <img src="/assets/ChatGPT%20Image%20Mar%2022_%202026_%2001_39_16%20AM-qdnydrpl.webp" alt="Tavolata all'aperto, atmosfera serale" class="photo-card-img" />
-          <div class="photo-noise" aria-hidden="true"></div>
+      <!-- Compare slider column -->
+      <div class="compare-wrap">
+        <p class="compare-question">Quale piatto ti attira di più?</p>
+        <div class="compare-slider" id="compare-slider">
+          <!-- BEFORE: sostituire con foto classica da ristorante (stessa portata) -->
+          <div class="compare-before">
+            <img src="/assets/ChatGPT%20Image%20Mar%2022_%202026_%2001_46_30%20AM-CMYVJJD-.webp" alt="Foto classica" class="compare-img" />
+            <span class="compare-label compare-label--before">Foto cliente</span>
+          </div>
+          <!-- AFTER: sostituire con foto professionale (stessa portata) -->
+          <div class="compare-after" id="compare-after">
+            <img src="/assets/ChatGPT%20Image%20Mar%2022_%202026_%2001_46_30%20AM-CMYVJJD-.webp" alt="Foto professionale" class="compare-img" />
+            <span class="compare-label compare-label--after">Foto professionale</span>
+          </div>
+          <!-- Drag handle -->
+          <div class="compare-handle" id="compare-handle" aria-label="Trascina per confrontare">
+            <div class="compare-handle-line"></div>
+            <div class="compare-handle-grip">
+              <svg width="22" height="22" viewBox="0 0 22 22" fill="none" aria-hidden="true">
+                <path d="M7 11L2 8v6l5-3zm8 0l5-3v6l-5-3z" fill="currentColor"/>
+              </svg>
+            </div>
+          </div>
         </div>
       </div>
 
