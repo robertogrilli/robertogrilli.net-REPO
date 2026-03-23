@@ -2056,6 +2056,17 @@ a.pain-fonte:hover {
 
   .section-cta {
     padding: 5rem 0;
+    min-height: auto;
+  }
+
+  /* Diagonal separator — flatten angle on mobile to avoid harsh cut */
+  .sep-diagonal-down {
+    height: 48px;
+    clip-path: polygon(0 0, 100% 0, 100% 20%, 0 100%);
+  }
+
+  .sep-diagonal-down::after {
+    clip-path: polygon(0 100%, 100% 20%, 100% 100%);
   }
 
   /* Hero */
